@@ -14,11 +14,11 @@
 
 Innovative checkin tracking platform that revolutionizes the way educational and corporate institutions monitor the presence of students and employees, using blockchain network, specifically [Optimism](https://optimism.io/), to ensure transparency, security, and speed, the project offers an immutable and fraud-proof checkin recording system.
 
-You can find more information about the project in the [documentation](https://airport-coders.github.io/OptiPresence/).
+You can find more information about the project in the [documentation](https://bottle-coders.github.io/EtherEvent/).
 
 ## Links
 
--   [Documentation](https://airport-coders.github.io/OptiPresence/)
+-   [Documentation](https://bottle-coders.github.io/EtherEvent/)
 -   [Demo deployment](https://optipresence.vercel.app/)
 -   [Pitch video](https://youtu.be/C6Knx3dPk0w)
 -   [Demo video](https://www.youtube.com/watch?v=W0rheKsxDSw)
