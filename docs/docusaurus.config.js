@@ -2,19 +2,19 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-	title: 'Airport Coders',
-	tagline: 'Airport Coders',
+	title: 'Bottle Coders',
+	tagline: 'Bottle Coders',
 	favicon: 'img/logo.png',
 
 	// Set the production url of your site here
-	url: 'https://airport-coders.github.io/',
+	url: 'https://bottle-coders.github.io/',
 	// Set the /<baseUrl>/ pathname under which your site is served
 	// For GitHub pages deployment, it is often '/<projectName>/'
-	baseUrl: '/OptiPresence/',
+	baseUrl: '/EtherEvent/',
 
 	// GitHub pages deployment config.
 	// If you aren't using GitHub pages, you don't need these.
-	organizationName: 'Airport Coders', // Usually your GitHub org/user name.
+	organizationName: 'Bottle Coders', // Usually your GitHub org/user name.
 	projectName: 'docusaurus', // Usually your repo name.
 
 	onBrokenLinks: 'throw',
