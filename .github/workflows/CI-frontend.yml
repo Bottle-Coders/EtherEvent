@@ -21,13 +21,14 @@ jobs:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: npm install --prefix frontend
+        working-directory: frontend
+        run: npm install 
 
       - name: Test Build frontend
-        run: npm run build --prefix frontend
+        run: npm run build 
 
       - name: Test Run frontend
-        run: npm run start --prefix frontend
+        run: npm run start
 
       - name: Cleanup
-        run: npm run stop --prefix frontend
+        run: npm run stop
