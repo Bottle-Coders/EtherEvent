@@ -43,7 +43,7 @@ slug: /
 
 -   **Real-Time Location Validation** 🌍: Incorporates GPS and geofencing technologies to validate the exact location of check-in, ensuring presence at the designated site, whether it's a workplace, classroom, or remote location.
 
--   **Blockchain-Backed Record Keeping** 📖: Utilizes the Optimism blockchain network for storing check-in data, providing an immutable, transparent, and secure ledger that prevents tampering and ensures data integrity.
+-   **Blockchain-Backed Record Keeping** 📖: Utilizes the iExec blockchain network for storing check-in data, providing an immutable, transparent, and secure ledger that prevents tampering and ensures data integrity.
 
 -   **Integration-Friendly** 🔗: Designed to seamlessly integrate with existing systems such as HR(payroll), student information systems, and more, facilitating real-time updates and reducing administrative overhead.
 
@@ -55,7 +55,7 @@ slug: /
 
 ## Use Cases 📋
 
--   **Academic Institutions** 🏫: OptiPresence streamlines attendance tracking and participation in classes, seminars, and exams. It integrates with student information systems, automates grade book updates, and supports accreditation processes.
+-   **Academic Institutions** 🏫: iPresence streamlines attendance tracking and participation in classes, seminars, and exams. It integrates with student information systems, automates grade book updates, and supports accreditation processes.
 
 -   **Corporate Environments** 🏢: Facilitates accurate employee time tracking, integrates with HR(Payroll) systems, and ensures compliance with labor regulations. Enhances workplace productivity and accountability.
 

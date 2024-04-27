@@ -12,7 +12,7 @@ const features = [
   {
     name: 'Secure Biometric Authentication',
     description:
-      'Utilizing advanced facial recognition technology, OptiPresence ensures that only registered individuals can check in, effectively eliminating issues like "buddy punching" and unauthorized access.',
+      'Utilizing advanced facial recognition technology, iPresence ensures that only registered individuals can check in, effectively eliminating issues like "buddy punching" and unauthorized access.',
     icon: DeviceUserIcon,
   },
   {
@@ -193,14 +193,14 @@ export function PrimaryFeatures() {
         <div className="text-center lg:text-left">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Discover the future of presence verification with{' '}
-            <span className="text-pink-300">OptiPresence</span>.
+            <span className="text-pink-300">iPresence</span>.
           </h2>
           <p className="mt-4 text-xl text-gray-300 sm:text-2xl">
             Why deal with outdated check-in systems when{' '}
-            <span className="font-semibold text-white">OptiPresence</span>{' '}
+            <span className="font-semibold text-white">iPresence</span>{' '}
             offers you the ultimate solution? Embrace the innovation that
             combines blockchain, facial recognition, and geolocation technology.
-            With <span className="font-semibold text-white">OptiPresence</span>,
+            With <span className="font-semibold text-white">iPresence</span>,
             your presence is all you need to check in, streamlining the process
             for educational institutions, corporate environments, healthcare
             facilities, and more.

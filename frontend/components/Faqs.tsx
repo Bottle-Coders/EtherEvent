@@ -3,55 +3,55 @@ import { Container } from './../components/Container'
 const faqs = [
   [
     {
-      question: 'How does OptiPresence ensure attendance authenticity?',
+      question: 'How does iPresence ensure attendance authenticity?',
       answer:
-        'OptiPresence employs secure biometric authentication and real-time location validation. This ensures that only the registered individual can check in at the correct location, effectively eliminating buddy punching and unauthorized access.',
+        'iPresence employs secure biometric authentication and real-time location validation. This ensures that only the registered individual can check in at the correct location, effectively eliminating buddy punching and unauthorized access.',
     },
     {
       question:
-        'How does blockchain technology enhance the security of OptiPresence?',
+        'How does blockchain technology enhance the security of iPresence?',
       answer:
-        'By utilizing the Optimism blockchain network, OptiPresence provides an immutable, transparent, and secure ledger for check-in data. This prevents tampering and ensures the integrity and accuracy of attendance records.',
+        'By utilizing the Optimism blockchain network, iPresence provides an immutable, transparent, and secure ledger for check-in data. This prevents tampering and ensures the integrity and accuracy of attendance records.',
     },
     {
-      question: 'Can OptiPresence integrate with existing systems?',
+      question: 'Can iPresence integrate with existing systems?',
       answer:
-        'Yes, OptiPresence is designed to be integration-friendly. It can seamlessly connect with HR (payroll) systems, student information systems, and more, facilitating real-time updates and reducing administrative overhead.',
+        'Yes, iPresence is designed to be integration-friendly. It can seamlessly connect with HR (payroll) systems, student information systems, and more, facilitating real-time updates and reducing administrative overhead.',
     },
   ],
   [
     {
       question:
-        'Is OptiPresence customizable for different organizational needs?',
+        'Is iPresence customizable for different organizational needs?',
       answer:
-        'Absolutely. OptiPresence allows institutions to set specific check-in parameters, adapting to various contractual or educational requirements, and supporting diverse working arrangements and academic schedules.',
+        'Absolutely. iPresence allows institutions to set specific check-in parameters, adapting to various contractual or educational requirements, and supporting diverse working arrangements and academic schedules.',
     },
     {
-      question: 'How can OptiPresence simplify the auditing process?',
+      question: 'How can iPresence simplify the auditing process?',
       answer:
-        'OptiPresence generates comprehensive and irrefutable reports suitable for both internal and external audits. This enhances regulatory compliance and simplifies the auditing process by leveraging the immutable nature of blockchain records.',
+        'iPresence generates comprehensive and irrefutable reports suitable for both internal and external audits. This enhances regulatory compliance and simplifies the auditing process by leveraging the immutable nature of blockchain records.',
     },
     {
-      question: 'What additional verification needs can OptiPresence fulfill?',
+      question: 'What additional verification needs can iPresence fulfill?',
       answer:
-        'Beyond just check-ins, OptiPresence can be adapted for verifying academic achievements, professional credentials, event participation, and health records, offering a versatile platform for various verification requirements.',
+        'Beyond just check-ins, iPresence can be adapted for verifying academic achievements, professional credentials, event participation, and health records, offering a versatile platform for various verification requirements.',
     },
   ],
   [
     {
-      question: 'Who can benefit from using OptiPresence?',
+      question: 'Who can benefit from using iPresence?',
       answer:
-        'OptiPresence is suitable for academic institutions, corporate environments, healthcare facilities, events and conferences, and government and public services. It streamlines attendance tracking and enhances accountability and transparency.',
+        'iPresence is suitable for academic institutions, corporate environments, healthcare facilities, events and conferences, and government and public services. It streamlines attendance tracking and enhances accountability and transparency.',
     },
     {
-      question: 'How does OptiPresence protect privacy and data security?',
+      question: 'How does iPresence protect privacy and data security?',
       answer:
-        'Using permissioned blockchain technology, OptiPresence ensures that sensitive data is securely stored and shared only with authorized parties. It adheres to strict data protection regulations and offers robust security features.',
+        'Using permissioned blockchain technology, iPresence ensures that sensitive data is securely stored and shared only with authorized parties. It adheres to strict data protection regulations and offers robust security features.',
     },
     {
-      question: 'OptiPresence is simple to use?',
+      question: 'iPresence is simple to use?',
       answer:
-        'Yes, OptiPresence is designed to be user-friendly and intuitive. It requires minimal training and can be easily adopted by employees, students, and other users. The platform is accessible via web and mobile applications.',
+        'Yes, iPresence is designed to be user-friendly and intuitive. It requires minimal training and can be easily adopted by employees, students, and other users. The platform is accessible via web and mobile applications.',
     },
   ],
 ]

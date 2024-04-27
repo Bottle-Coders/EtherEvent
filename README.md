@@ -8,7 +8,7 @@
     <em> Project developed for <a href="https://taikai.network/iExec/hackathons/ibuild/resources">iBuild Online Hackathon</a></em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/Airport-Coders/OptiPresence?style=default&logo=opensourceinitiative&logoColor=white&color=78DCE8" alt="license">
+	<img src="https://img.shields.io/github/license/Bottle-Coders/iPresence/?style=default&logo=opensourceinitiative&logoColor=white&color=78DCE8" alt="license">
 	<img src="https://img.shields.io/github/actions/workflow/status/Bottle-Coders/iPresence/CI.yml" alt="GitHub Actions Workflow Status">
 </p>
 

@@ -17,17 +17,17 @@ A user interaction diagram that shows the flow of the user interaction with the 
 
 ## Folders 📁
 
--   [smartcontracts](https://github.com/Airport-Coders/OptiPresence/tree/main/smartcontracts): Repository of [Scaffold-op](https://github.com/ethereum-optimism/scaffold-op) with the smart contracts and tests for the project. 📜
--   [frontend](https://github.com/Airport-Coders/OptiPresence/tree/main/frontend): The [Next.js](https://nextjs.org/) application for the frontend of the project with [rainbowkit](https://www.rainbowkit.com/) and [wagmi](https://wagmi.sh/) for integration on the blockchain. 💻
--   [offchain](https://github.com/Airport-Coders/OptiPresence/tree/main/offchain): Offchain [python](https://www.python.org/) service for the project, with the [web3](https://github.com/ethereum/web3.py) package to listen to events on the blockchain and validate the face recognition and geo-location of the users. 🐍
--   [docs](https://github.com/Airport-Coders/OptiPresence/tree/main/docs): Documentation of the project with [docusaurus](https://docusaurus.io/). _You are here 🤓_.
--   [.github](https://github.com/Airport-Coders/OptiPresence/tree/main/.github): Github actions for the project, with the tests and autodeploy of the frontend and offchain services. 🛠️
+-   [smartcontracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts): Repository of [Scaffold-op](https://github.com/ethereum-optimism/scaffold-op) with the smart contracts and tests for the project. 📜
+-   [frontend](https://github.com/Bottle-Coders/iPresence/tree/main/frontend): The [Next.js](https://nextjs.org/) application for the frontend of the project with [rainbowkit](https://www.rainbowkit.com/) and [wagmi](https://wagmi.sh/) for integration on the blockchain. 💻
+-   [offchain](https://github.com/Bottle-Coders/iPresence/tree/main/offchain): Offchain [python](https://www.python.org/) service for the project, with the [web3](https://github.com/ethereum/web3.py) package to listen to events on the blockchain and validate the face recognition and geo-location of the users. 🐍
+-   [docs](https://github.com/Bottle-Coders/iPresence/tree/main/docs): Documentation of the project with [docusaurus](https://docusaurus.io/). _You are here 🤓_.
+-   [.github](https://github.com/Bottle-Coders/iPresence/tree/main/.github): Github actions for the project, with the tests and autodeploy of the frontend and offchain services. 🛠️
 -   `Dockerfile.* and docker-compose-*.yml`: Docker containers for the services of the project, with [docker-compose](https://docs.docker.com/compose/) for the development, production, and test environments. 🐳
 -   `Procfile`: Heroku file to run the offchain service in the cloud. ☁️
 
 ## Contracts 📄
 
-You can find the smart contracts in the [contracts folder](https://github.com/Airport-Coders/OptiPresence/tree/main/smartcontracts/packages/hardhat/contracts) and the tests in the [test folder](https://github.com/Airport-Coders/OptiPresence/tree/main/smartcontracts/packages/hardhat/test) of the repository. The contracts are written in Solidity and are used to manage the user registry, event management, and check-in processes. The tests are written in TypeScript and are used to ensure the contracts are functioning as expected with different scenarios.
+You can find the smart contracts in the [contracts folder](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts/packages/hardhat/contracts) and the tests in the [test folder](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts/packages/hardhat/test) of the repository. The contracts are written in Solidity and are used to manage the user registry, event management, and check-in processes. The tests are written in TypeScript and are used to ensure the contracts are functioning as expected with different scenarios.
 
 ### UserRegistry 📚
 

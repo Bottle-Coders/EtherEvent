@@ -20,13 +20,13 @@ Before you start, you need to have the following prerequisites:
 You need to have the project cloned in your local machine. You can do this by running the following command in the terminal:
 
 ```bash
-git clone git@github.com:Airport-Coders/OptiPresence.git
+git clone git@github.com:Bottle-Coders/iPresence.git
 ```
 
 and then, navigate to the project's root directory:
 
 ```bash
-cd OptiPresence
+cd iPresence
 ```
 
 ## Environment Variables 🔐

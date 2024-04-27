@@ -72,7 +72,7 @@ const config = {
 						position: 'left',
 					},
 					{
-						href: 'https://github.com/Airport-Coders/OptiPresence',
+						href: 'https://github.com/Bottle-Coders/iPresence/',
 						label: 'GitHub',
 						position: 'right',
 					},

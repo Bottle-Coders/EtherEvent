@@ -14,35 +14,35 @@ interface UseCase {
 const useCases: Array<UseCase> = [
   {
     title: 'Enhanced Academic Integrity',
-    body: 'OptiPresence revolutionizes academic attendance, ensuring only registered students can mark their presence using secure biometric authentication. This has significantly reduced cases of proxy attendance and improved participation in my lectures.',
+    body: 'iPresence revolutionizes academic attendance, ensuring only registered students can mark their presence using secure biometric authentication. This has significantly reduced cases of proxy attendance and improved participation in my lectures.',
   },
   {
     title: 'Streamlined Workplace Attendance',
-    body: 'Implementing OptiPresence in our office has transformed timekeeping. The integration with our HR systems has streamlined payroll processes, and real-time location validation ensures accurate recording of work hours.',
+    body: 'Implementing iPresence in our office has transformed timekeeping. The integration with our HR systems has streamlined payroll processes, and real-time location validation ensures accurate recording of work hours.',
   },
   {
     title: 'Secure Patient Verification',
-    body: 'In our healthcare facility, OptiPresence provides a secure way to confirm patient appointments and treatments. This has improved patient management and ensured adherence to medical schedules, enhancing overall care quality.',
+    body: 'In our healthcare facility, iPresence provides a secure way to confirm patient appointments and treatments. This has improved patient management and ensured adherence to medical schedules, enhancing overall care quality.',
   },
   {
     title: 'Efficient Event Management',
-    body: 'Using OptiPresence at our events has led to faster check-ins and enhanced security. The facial recognition and blockchain technology ensure that only registered attendees can access the venue, providing a seamless experience for everyone.',
+    body: 'Using iPresence at our events has led to faster check-ins and enhanced security. The facial recognition and blockchain technology ensure that only registered attendees can access the venue, providing a seamless experience for everyone.',
   },
   {
     title: 'Transparent Government Services',
-    body: 'OptiPresence has enabled us to monitor public service attendance more efficiently. Its blockchain-based system offers transparency and accountability, improving trust in our services and ensuring compliance with regulations.',
+    body: 'iPresence has enabled us to monitor public service attendance more efficiently. Its blockchain-based system offers transparency and accountability, improving trust in our services and ensuring compliance with regulations.',
   },
   {
     title: 'Innovative Remote Working Solutions',
-    body: 'OptiPresence has been pivotal for our remote work policies. By validating employee locations and ensuring authentication through facial recognition, we maintain high productivity levels and accurate time tracking, regardless of where our employees are working from.',
+    body: 'iPresence has been pivotal for our remote work policies. By validating employee locations and ensuring authentication through facial recognition, we maintain high productivity levels and accurate time tracking, regardless of where our employees are working from.',
   },
   {
     title: 'Revolutionizing Conference Participation',
-    body: 'The introduction of OptiPresence at our annual conference allowed for a new level of interaction and security. Attendees could seamlessly check in through facial recognition, making the event not only more secure but also more engaging.',
+    body: 'The introduction of iPresence at our annual conference allowed for a new level of interaction and security. Attendees could seamlessly check in through facial recognition, making the event not only more secure but also more engaging.',
   },
   {
     title: 'Guaranteed Academic Record Integrity',
-    body: 'With OptiPresence, we have a dependable system for validating student participation and achievements. This has greatly assisted in maintaining the integrity of our academic records and streamlining the accreditation process.',
+    body: 'With iPresence, we have a dependable system for validating student participation and achievements. This has greatly assisted in maintaining the integrity of our academic records and streamlining the accreditation process.',
   },
 ]
 
@@ -203,7 +203,7 @@ export function UseCases() {
           Use Cases
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          Discover how <b>OptiPresence</b> can transform various industries and
+          Discover how <b>iPresence</b> can transform various industries and
           applications.
         </p>
         <UseCasesGrid />
