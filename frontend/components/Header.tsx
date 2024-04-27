@@ -148,7 +148,7 @@ export function Header() {
                             transition: { duration: 0.2 },
                           }}
                           className="shadow-2 xl absolute inset-x-0 top-0 z-40 origin-top rounded-b-2xl bg-gray-50 px-6 pb-6
-						  pt-32 shadow-gray-900/20"
+                          pt-32 shadow-gray-900/20"
                         >
                           <div className="space-y-4">
                             <MobileNavLink href="/#features">

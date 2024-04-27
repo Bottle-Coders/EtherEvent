@@ -6,6 +6,13 @@ import toast from 'react-hot-toast'
 import { uploadFile } from '../modules/IPFS'
 import { useContracts } from '../providers/contracts'
 import { useWriteContract } from 'wagmi'
+import {
+  useSendEmailMutation,
+  useFetchProtectedDataQuery,
+  selectAppIsConnected,
+} from '../app/appSlice'
+import { useAppSelector } from '../app/hooks'
+import { useAccount } from 'wagmi'
 
 function CaptureButton({
   getScreenshot,
@@ -49,7 +56,9 @@ function useLocation() {
   return location
 }
 
-export function Checkin({ id }: { id: string }) {
+export function Checkin({ id }: { id: number }) {
+  const { address } = useAccount()
+
   const router = useRouter()
   const webcamRef = React.useRef<Webcam>(null)
   const location = useLocation()
@@ -63,7 +72,14 @@ export function Checkin({ id }: { id: string }) {
     writeContract,
   } = useWriteContract()
   const checkInManager = contractsData?.CheckInManager
-
+  const isAccountConnected = useAppSelector(selectAppIsConnected)
+  const { data: protectedData } = useFetchProtectedDataQuery(
+    address as string,
+    {
+      skip: !isAccountConnected,
+    },
+  )
+  const [sendEmail] = useSendEmailMutation()
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current?.getScreenshot()
     setPhoto(imageSrc || null)
@@ -88,26 +104,79 @@ export function Checkin({ id }: { id: string }) {
   }
 
   const requestCheckIn = (ipfsHash: string) => {
+    console.log('protectedData:', protectedData)
+    if (!protectedData) return
+    const emailProtectedData = protectedData.find((data) => data.schema.email)
+    if (!emailProtectedData) return
     writeContract({
       address: checkInManager?.address as any,
       abi: checkInManager?.abi,
       functionName: 'requestCheckIn',
-      args: [id, ipfsHash, `${location?.latitude},${location?.longitude}`],
+      args: [
+        id,
+        ipfsHash,
+        `${location?.latitude},${location?.longitude}`,
+        emailProtectedData.address,
+      ],
     })
   }
+
+  const [isSendingEmail, setIsSendingEmail] = useState(false)
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const sendEmailHandle = async () => {
+    console.log('protectedData:', protectedData)
+    if (!protectedData) return
+    const emailProtectedData = protectedData.find((data) => data.schema.email)
+    if (!emailProtectedData) return
+
+    console.log('emailProtectedData:', emailProtectedData)
+
+    console.log('Sending email...')
+    await sendEmail({
+      senderName: 'iPresence',
+      contentType: 'text/html',
+      emailSubject: 'Check-in Confirmation',
+      emailContent: `You have successfully checked in to the event with ID: ${id}`,
+      protectedData: emailProtectedData.address,
+    })
+      .unwrap()
+      .then(() => {
+        console.log('Email sent!')
+      })
+      .catch((error: any) => {
+        console.error('Error sending email:', error)
+      })
+  }
+
   useEffect(() => {
     if (hash && !isPending) {
       if (!isError) {
-        const toastId = toast.loading('Checking in...')
-        setTimeout(() => {
-          toast.success('Checking created successfully!', { id: toastId })
-          router.push('/event/' + id)
-        }, 10000)
+        if (!isSendingEmail) {
+          setIsSendingEmail(true)
+          const toastId = toast.loading('Checking in...')
+
+          sendEmailHandle().then(() => {
+            setTimeout(() => {
+              toast.success('Checking created successfully!', { id: toastId })
+              router.push('/event/' + id)
+            }, 5000)
+          })
+        }
       } else {
-        toast.error('Error creating event!')
+        toast.error('Error creating check-in')
       }
     }
-  }, [hash, isPending, isError, router, id])
+  }, [
+    hash,
+    isPending,
+    isError,
+    router,
+    id,
+    sendEmailHandle,
+    setIsSendingEmail,
+    isSendingEmail,
+  ])
 
   const videoConstraints = {
     width: 1280,

@@ -1,4 +1,3 @@
-// Start by importing necessary modules and components
 import React, { useEffect, useState } from 'react'
 import {
   Button,
@@ -19,14 +18,25 @@ import toast from 'react-hot-toast'
 import { useContracts } from '../providers/contracts'
 import { uploadFile, getFileUrl } from '../modules/IPFS'
 import Image from 'next/image'
+import {
+  useCreateProtectedDataMutation,
+  useGrantNewAccessMutation,
+  WEB3MAIL_IDAPPS_WHITELIST_SC,
+} from '../app/appSlice'
+import { useAccount } from 'wagmi'
 
 export function RegisterUserButtonModal() {
   const [isOpen, setIsOpen] = useState(false)
   const [name, setName] = useState('')
   const [faceHash, setFaceHash] = useState('')
+  const [email, setEmail] = useState('')
   const { data: contractsData } = useContracts()
   const { data: hash, isPending, isError, writeContract } = useWriteContract()
   const userRegistry = contractsData?.UserRegistry
+  const [createProtectedData] = useCreateProtectedDataMutation()
+  const [grantNewAccess] = useGrantNewAccessMutation()
+
+  const [isProtectedDataLoading, setProtectedDataLoading] = useState(false)
 
   const openModal = () => setIsOpen(true)
   const closeModal = () => setIsOpen(false)
@@ -34,6 +44,7 @@ export function RegisterUserButtonModal() {
   useEffect(() => {
     if (hash && !isPending) {
       if (!isError) {
+        if (isProtectedDataLoading) return
         const toastId = toast.loading('Registering user...')
         setTimeout(() => {
           toast.success('User registered successfully!', { id: toastId })
@@ -44,15 +55,39 @@ export function RegisterUserButtonModal() {
         toast.error('Error registering user!')
       }
     }
-  }, [hash, isPending, isError])
+  }, [hash, isPending, isError, isProtectedDataLoading])
 
   const registerUser = async () => {
+    setProtectedDataLoading(true)
     writeContract({
       address: userRegistry?.address as any,
       abi: userRegistry?.abi,
       functionName: 'registerUser',
       args: [name, faceHash],
     })
+
+    const protectData = {
+      data: {
+        email,
+        SMTPserver: {
+          port: 5000,
+          smtp_server: 'smtp.gmail.com',
+        },
+      },
+      name: 'User Data',
+    }
+
+    const data = (await createProtectedData(protectData)) as any
+    console.log('data:', data)
+
+    await grantNewAccess({
+      protectedData: (data as any).data,
+      authorizedApp: WEB3MAIL_IDAPPS_WHITELIST_SC,
+      authorizedUser: '0x0000000000000000000000000000000000000000',
+      numberOfAccess: 10,
+    })
+
+    setProtectedDataLoading(false)
   }
 
   const handleNameChange = (event: any) => setName(event.target.value)
@@ -102,6 +137,11 @@ export function RegisterUserButtonModal() {
             <FormControl>
               <FormLabel>Name</FormLabel>
               <Input value={name} onChange={handleNameChange} />
+            </FormControl>
+
+            <FormControl mt={4}>
+              <FormLabel>Email</FormLabel>
+              <Input value={email} onChange={(e) => setEmail(e.target.value)} />
             </FormControl>
 
             <FormControl mt={4}>

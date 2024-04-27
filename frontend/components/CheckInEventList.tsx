@@ -68,6 +68,12 @@ const UserCheckIn: React.FC<UserCheckInProps> = ({ address, id }) => {
       </p>
       <p className="flex items-center text-sm text-gray-600">
         <span className="material-icons-outlined mr-2 text-gray-500">
+          Protected data address:
+        </span>
+        {latestCheckIn.emailProtectedAddress}
+      </p>
+      <p className="flex items-center text-sm text-gray-600">
+        <span className="material-icons-outlined mr-2 text-gray-500">
           Checkin location:
         </span>
         <a
