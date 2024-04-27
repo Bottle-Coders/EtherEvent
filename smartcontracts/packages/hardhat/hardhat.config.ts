@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 dotenv.config();
-import { HardhatUserConfig } from "hardhat/config";
+import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-ethers";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@typechain/hardhat";
@@ -9,6 +9,16 @@ import "solidity-coverage";
 import "@nomicfoundation/hardhat-verify";
 import "hardhat-deploy";
 import "hardhat-deploy-ethers";
+
+task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+  const accounts = await hre.ethers.getSigners();
+
+  console.log("Accounts:");
+
+  for (const account of accounts) {
+    console.log(account.address);
+  }
+});
 
 // If not set, it uses ours Alchemy's default API key.
 // You can get your own at https://dashboard.alchemyapi.io
@@ -23,9 +33,7 @@ const config: HardhatUserConfig = {
   solidity: {
     version: "0.8.17",
     settings: {
-      viaIR: true,
       optimizer: {
-        viaIR: true,
         enabled: true,
         // https://docs.soliditylang.org/en/latest/using-the-compiler.html#optimizer-options
         runs: 200,
@@ -35,23 +43,14 @@ const config: HardhatUserConfig = {
   defaultNetwork: "iExec",
   namedAccounts: {
     deployer: {
-      // By default, it will take the first Hardhat account as the deployer
       default: 0,
     },
   },
   networks: {
-    // View the networks that are pre-configured.
-    // If the network you are looking for is not here you can add new network settings
-    hardhat: {
-      forking: {
-        url: `https://eth-mainnet.alchemyapi.io/v2/${providerApiKey}`,
-        enabled: process.env.MAINNET_FORKING_ENABLED === "true",
-      },
-    },
     iExec: {
       url: "https://bellecour.iex.ec",
       gasPrice: 0,
-      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      accounts: [deployerPrivateKey],
     },
   },
   // configuration for harhdat-verify plugin

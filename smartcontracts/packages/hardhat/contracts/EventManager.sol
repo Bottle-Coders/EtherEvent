@@ -1,4 +1,4 @@
-//SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity >=0.8.0 <0.9.0;
 
 /*
@@ -17,9 +17,19 @@ contract EventManager {
 		bool active;
 	}
 
+	struct EventData {
+		string name;
+		string description;
+		string imageHash;
+		string location;
+		uint256 startTime;
+		uint256 endTime;
+		bool active;
+	}
+
 	Event[] public events;
 
-	event EventCreated(uint256 indexed eventId, string name, address owner); // Event created
+	event EventCreated(uint256 indexed eventId, string name, address owner);
 
 	// Modifier to ensure only the owner can perform an action
 	modifier onlyOwner(uint256 _eventId) {
@@ -36,89 +46,47 @@ contract EventManager {
 		_;
 	}
 
-	// Modifier for validating time range
-	modifier validTime(uint256 _startTime, uint256 _endTime) {
-		require(_startTime < _endTime, "Invalid time range");
+	// Modifier for validating event data
+	modifier validEventData(EventData memory data) {
+		require(
+			bytes(data.name).length > 0 && bytes(data.name).length <= 128,
+			"Invalid name"
+		);
+		require(
+			bytes(data.description).length > 0 &&
+				bytes(data.description).length <= 1024,
+			"Invalid description"
+		);
+		require(bytes(data.imageHash).length == 46, "Invalid IPFS hash");
+		require(bytes(data.location).length > 0, "Invalid location");
+		require(data.startTime < data.endTime, "Invalid time range");
 		_;
 	}
 
-	// Modifier for validating location
-	modifier validLocation(string memory _location) {
-		require(bytes(_location).length > 0, "Invalid location");
-		_;
-	}
-
-	// Modifier for validating event name
-	modifier validName(string memory _name) {
-		require(bytes(_name).length > 0, "Invalid name");
-		require(bytes(_name).length <= 128, "Name too long");
-		_;
-	}
-
-	// Modifier for validating event description
-	modifier validDescription(string memory _description) {
-		require(bytes(_description).length > 0, "Invalid description");
-		require(bytes(_description).length <= 1024, "Description too long");
-		_;
-	}
-
-	// Modifier for validating IPFS hashes
-	modifier validImageHash(string memory _imageHash) {
-		require(bytes(_imageHash).length == 46, "Invalid IPFS hash");
-		_;
-	}
-
-	/*
-	 * @dev Sets event details.
-	 * @param _eventId ID of the event.
-	 * @param _name Name of the event.
-	 * @param _description Description of the event.
-	 * @param _imageHash IPFS hash of the event's image.
-	 * @param _location Location of the event (description or coordinates).
-	 * @param _startTime Start time of the event.
-	 * @param _endTime End time of the event.
-	 * @param _active Whether the event is active.
-	 * @param _isNewEvent Whether the event is new.
-	 */
 	function _setEvent(
 		uint256 _eventId,
-		string memory _name,
-		string memory _description,
-		string memory _imageHash,
-		string memory _location,
-		uint256 _startTime,
-		uint256 _endTime,
-		bool _active,
+		EventData memory data,
 		bool _isNewEvent
 	) private {
 		Event memory newEvent = Event({
-			name: _name,
-			description: _description,
-			imageHash: _imageHash,
-			location: _location,
+			name: data.name,
+			description: data.description,
+			imageHash: data.imageHash,
+			location: data.location,
 			owner: msg.sender,
-			startTime: _startTime,
-			endTime: _endTime,
-			active: _active
+			startTime: data.startTime,
+			endTime: data.endTime,
+			active: data.active
 		});
 
 		if (_isNewEvent) {
 			events.push(newEvent);
-			emit EventCreated(events.length - 1, _name, msg.sender);
+			emit EventCreated(events.length - 1, data.name, msg.sender);
 		} else {
 			events[_eventId] = newEvent;
 		}
 	}
 
-	/*
-	 * @dev Creates a new event.
-	 * @param _name Name of the event.
-	 * @param _description Description of the event.
-	 * @param _imageHash IPFS hash of the event's image.
-	 * @param _location Location of the event (description or coordinates).
-	 * @param _startTime Start time of the event.
-	 * @param _endTime End time of the event.
-	 */
 	function createEvent(
 		string calldata _name,
 		string calldata _description,
@@ -126,35 +94,20 @@ contract EventManager {
 		string calldata _location,
 		uint256 _startTime,
 		uint256 _endTime
-	)
-		external
-		validName(_name)
-		validDescription(_description)
-		validImageHash(_imageHash)
-		validLocation(_location)
-		validTime(_startTime, _endTime)
-	{
-		_setEvent(
-			0,
-			_name,
-			_description,
-			_imageHash,
-			_location,
-			_startTime,
-			_endTime,
-			true,
-			true
-		);
+	) external {
+		EventData memory data = EventData({
+			name: _name,
+			description: _description,
+			imageHash: _imageHash,
+			location: _location,
+			startTime: _startTime,
+			endTime: _endTime,
+			active: true
+		});
+
+		_setEvent(0, data, true);
 	}
 
-	/*
-	 * @dev Updates event information.
-	 * @param _eventId ID of the event.
-	 * @param _name Name of the event.
-	 * @param _location Location of the event (description or coordinates).
-	 * @param _startTime Start time of the event.
-	 * @param _endTime End time of the event.
-	 */
 	function updateEvent(
 		uint256 _eventId,
 		string calldata _name,
@@ -164,42 +117,24 @@ contract EventManager {
 		uint256 _startTime,
 		uint256 _endTime,
 		bool _active
-	)
-		external
-		eventExists(_eventId)
-		onlyOwner(_eventId)
-		validName(_name)
-		validDescription(_description)
-		validImageHash(_imageHash)
-		validLocation(_location)
-		validTime(_startTime, _endTime)
-	{
-		_setEvent(
-			_eventId,
-			_name,
-			_description,
-			_imageHash,
-			_location,
-			_startTime,
-			_endTime,
-			_active,
-			false
-		);
+	) external eventExists(_eventId) onlyOwner(_eventId) {
+		EventData memory data = EventData({
+			name: _name,
+			description: _description,
+			imageHash: _imageHash,
+			location: _location,
+			startTime: _startTime,
+			endTime: _endTime,
+			active: _active
+		});
+
+		_setEvent(_eventId, data, false);
 	}
 
-	/*
-	 * @dev Retrieves event information.
-	 * @param _eventId ID of the event.
-	 * @return Event information.
-	 */
 	function getEvent(uint256 _eventId) external view returns (Event memory) {
 		return events[_eventId];
 	}
 
-	/*
-	 * @dev Retrieves all events.
-	 * @return All events.
-	 */
 	function getAllEvents() external view returns (Event[] memory) {
 		return events;
 	}

@@ -7,9 +7,7 @@ async function importJsonOrEnv<T>(name: string, envVar: string): Promise<T> {
   }
 
   try {
-    const importedJson = await import(
-      `/deployments/optimismSepolia/${name}.json`
-    )
+    const importedJson = await import(`/deployments/iExec/${name}.json`)
     console.log(`Successfully imported ${name}.json 🥳`)
 
     cache[name] = importedJson.default

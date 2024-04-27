@@ -9,7 +9,7 @@ from modules.event_processor import log_loop
 from services.facial_biometric import FaceComparatorService
 from services.geolocation import GeolocationService
 
-contract_path = CONTRACT_CheckInManager if CONTRACT_CheckInManager else OptimismSepoliaContractPath
+contract_path = CONTRACT_CheckInManager if CONTRACT_CheckInManager else iExecContractPath
 http_provider = HttpProviderAlchemy
 
 face_comparator_service = FaceComparatorService()
