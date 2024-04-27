@@ -7,7 +7,6 @@ import { WagmiProvider } from 'wagmi'
 import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import { ChakraProvider } from '@chakra-ui/react'
 import { Toaster } from 'react-hot-toast'
-import { type Chain } from 'wagmi'
 import { Provider } from 'react-redux'
 import { store } from '../app/store'
 import { ContractsProvider } from '../providers/contracts'
@@ -32,7 +31,7 @@ export const bellecour = {
     },
     default: { name: 'Blockscout', url: 'https://blockscout-bellecour.iex.ec' },
   },
-} as const satisfies Chain
+}
 
 const config = getDefaultConfig({
   appName: 'iPresence',

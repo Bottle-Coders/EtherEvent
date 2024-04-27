@@ -13,6 +13,7 @@ import {
 } from '../app/appSlice'
 import { useAppSelector } from '../app/hooks'
 import { useAccount } from 'wagmi'
+import createEmailContent from '../utils/email'
 
 function CaptureButton({
   getScreenshot,
@@ -56,7 +57,7 @@ function useLocation() {
   return location
 }
 
-export function Checkin({ id }: { id: number }) {
+export function Checkin({ id, eventName }: { id: number; eventName: string }) {
   const { address } = useAccount()
 
   const router = useRouter()
@@ -123,6 +124,8 @@ export function Checkin({ id }: { id: number }) {
 
   const [isSendingEmail, setIsSendingEmail] = useState(false)
 
+  console.log('eventName:', eventName)
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const sendEmailHandle = async () => {
     console.log('protectedData:', protectedData)
@@ -137,7 +140,10 @@ export function Checkin({ id }: { id: number }) {
       senderName: 'iPresence',
       contentType: 'text/html',
       emailSubject: 'Check-in Confirmation',
-      emailContent: `You have successfully checked in to the event with ID: ${id}`,
+      emailContent: createEmailContent(
+        eventName,
+        `https://ipresence.vercel.app/event/${id}`,
+      ),
       protectedData: emailProtectedData.address,
     })
       .unwrap()
