@@ -11,7 +11,7 @@ const faqs = [
       question:
         'How does blockchain technology enhance the security of iPresence?',
       answer:
-        'By utilizing the Optimism blockchain network, iPresence provides an immutable, transparent, and secure ledger for check-in data. This prevents tampering and ensures the integrity and accuracy of attendance records.',
+        'By utilizing the iExec blockchain network, iPresence stores check-in data in an immutable, transparent, and secure ledger. This prevents tampering and ensures data integrity, providing a fraud-proof record of attendance.',
     },
     {
       question: 'Can iPresence integrate with existing systems?',
@@ -21,8 +21,7 @@ const faqs = [
   ],
   [
     {
-      question:
-        'Is iPresence customizable for different organizational needs?',
+      question: 'Is iPresence customizable for different organizational needs?',
       answer:
         'Absolutely. iPresence allows institutions to set specific check-in parameters, adapting to various contractual or educational requirements, and supporting diverse working arrangements and academic schedules.',
     },
@@ -49,7 +48,7 @@ const faqs = [
         'Using permissioned blockchain technology, iPresence ensures that sensitive data is securely stored and shared only with authorized parties. It adheres to strict data protection regulations and offers robust security features.',
     },
     {
-      question: 'iPresence is simple to use?',
+      question: 'Is iPresence simple to use?',
       answer:
         'Yes, iPresence is designed to be user-friendly and intuitive. It requires minimal training and can be easily adopted by employees, students, and other users. The platform is accessible via web and mobile applications.',
     },

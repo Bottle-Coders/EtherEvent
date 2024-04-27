@@ -108,9 +108,13 @@ export function Hero() {
             <p className="mt-6 text-lg text-gray-600">
               An innovative check-in tracking platform revolutionizing
               attendance monitoring in educational and corporate institutions.
-              Utilizing the blockchain network, it ensures transparency,
-              security, and speed. This project offers an immutable and
-              fraud-proof check-in recording system.
+              Utilizing the blockchain network, specifically{' '}
+              <a href="https://iex.ec/" className="text-blue-600 underline">
+                IExec
+              </a>
+              , it ensures privacity and security with confidential computing.
+              This project offers an immutable and fraud-proof check-in
+              recording system.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Button
