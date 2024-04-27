@@ -14,7 +14,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.Node
-        command: yarn deploy --network optimismSepolia
+        command: yarn deploy --network iExec
         volumes:
             - ./smartcontracts:/workspace
         env_file:
