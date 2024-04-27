@@ -11,9 +11,9 @@ We have deployed the MVP on the following services:
 
 ## Frontend 💻
 
-The frontend of the MVP is deployed on Vercel, and you can access it by visiting [optipresence.vercel.app](https://optipresence.vercel.app/). The frontend has a CD pipeline that deploys changes on the `main` branch automatically. The embedded frontend is shown below:
+The frontend of the MVP is deployed on Vercel, and you can access it by visiting [ipresence.vercel.app](https://ipresence.vercel.app/). The frontend has a CD pipeline that deploys changes on the `main` branch automatically. The embedded frontend is shown below:
 
-<iframe src="https://optipresence.vercel.app/" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://ipresence.vercel.app/" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ## Offchain 🖥️
 
@@ -27,7 +27,7 @@ app[offchain.1]: Waiting for events...
 
 ## Contracts 📄
 
-Here are the current deployed contracts on the `optimism testnet`, with the ABI's and addresses on IPFS. You can find the ABI's and the addresses of the [project contracts](https://github.com/Airport-Coders/OptiPresence/tree/main/smartcontracts/packages/hardhat/contracts) by getting the `address` and `abi` properties of the deployed contracts:
+Here are the current deployed contracts on the `optimism testnet`, with the ABI's and addresses on IPFS. You can find the ABI's and the addresses of the [project contracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts/packages/hardhat/contracts) by getting the `address` and `abi` properties of the deployed contracts:
 
 -   [UserRegistry](https://gateway.pinata.cloud/ipfs/QmemAFKSXauKjvGtmJ6g1Q4rAMaMxftgwcZFH9h3422DSJ)
 -   [EventManager](https://gateway.pinata.cloud/ipfs/QmaLrH9dMkPNsLfekvmJsnHaeSJ1dwsGoUxsnbyRCyCnsp)

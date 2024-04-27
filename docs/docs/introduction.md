@@ -5,10 +5,10 @@ slug: /
 ---
 
 <div align="center">
-    <img src="img/logo.png" alt="OptiPresence Logo" width="200" />
-    <h1>Welcome to OptiPresence 👋</h1>
+    <img src="img/logo.png" alt="iPresence Logo" width="200" />
+    <h1>Welcome to iPresence 👋</h1>
     <h3><strong>Decentralized Check-In and Attendance Verification System 🛡️</strong></h3>
-    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://optimism.io/">Optimism</a>, it ensures transparency, security, and speed. This project offers an immutable and fraud-proof check-in recording system.</p>
+    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://iex.ec/">IExec</a>, it ensures transparency, security, and speed. This project offers an immutable and fraud-proof check-in recording system.</p>
 </div>
 
 ## Pitch video 🚀
