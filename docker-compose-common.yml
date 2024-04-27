@@ -12,6 +12,6 @@ services:
         build:
             context: .
             dockerfile: Dockerfile.Node
-        command: yarn
+        command: sh -c "yarn cache clean && yarn install"
         volumes:
             - ./frontend:/workspace
