@@ -52,11 +52,14 @@ describe("CheckInManager", function () {
     it("Should allow a user to request a check-in", async function () {
       const unknownFaceHash = "QmWK3pEw4JyFk9A3H3qzyUbGrp41qiJHtiPUnxoFQicSit";
       const userLocation = "51.5074,0.1278";
+      const emailProtectedAddress = "0x90fdc024ee455f5d623910d3859dd3a3d3b6d602";
 
       const knownFaceHash = (await userRegistry.getUserInfo(addr1.address)).faceHash;
       const event = (await eventManager.getAllEvents())[0];
 
-      await expect(checkInManager.connect(addr1).requestCheckIn(0, unknownFaceHash, userLocation))
+      await expect(
+        checkInManager.connect(addr1).requestCheckIn(0, unknownFaceHash, userLocation, emailProtectedAddress),
+      )
         .to.emit(checkInManager, "CheckInRequested")
         .withArgs(0, addr1.address, 0, knownFaceHash, unknownFaceHash, userLocation, event.location);
     });
@@ -72,7 +75,9 @@ describe("CheckInManager", function () {
     it("Should allow the offchain validator to reject a check-in", async function () {
       const faceHash = "QmWK3pEw4JyFk9A3H3qzyUbGrp41qiJHtiPUnxoFQicSit";
       const location = "51.5014,0.1419";
-      await checkInManager.connect(addr1).requestCheckIn(0, faceHash, location);
+      const emailProtectedAddress = "0x90fdc024ee455f5d623910d3859dd3a3d3b6d602";
+
+      await checkInManager.connect(addr1).requestCheckIn(0, faceHash, location, emailProtectedAddress);
 
       await expect(checkInManager.connect(offchainValidator).replyCheckIn(0, addr1.address, 1, false))
         .to.emit(checkInManager, "CheckInRejected")
