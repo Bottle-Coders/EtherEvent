@@ -12,7 +12,7 @@
 	<img src="https://img.shields.io/github/actions/workflow/status/Bottle-Coders/iPresence/CI.yml" alt="GitHub Actions Workflow Status">
 </p>
 
-Innovative checkin tracking platform that revolutionizes the way educational and corporate institutions monitor the presence of students and employees, using blockchain network, specifically [Optimism](https://optimism.io/), to ensure transparency, security, and speed, the project offers an immutable and fraud-proof checkin recording system.
+Innovative checkin tracking platform that revolutionizes the way educational and corporate institutions monitor the presence of students and employees, using blockchain network, specifically [iExec](https://iex.ec/), to ensure transparency, security, and speed, the project offers an immutable and fraud-proof checkin recording system.
 
 You can find more information about the project in the [documentation](https://bottle-coders.github.io/iPresence/).
 
