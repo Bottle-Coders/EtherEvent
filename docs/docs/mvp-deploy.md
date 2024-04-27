@@ -7,7 +7,7 @@ We have deployed the MVP on the following services:
 
 -   Frontend: [Vercel](https://vercel.com/) 🌐
 -   Offchain: [Heroku](https://www.heroku.com/) ☁️
--   Contracts: [Optimism testnet sepolia](https://chainlist.org/chain/11155420), with the ABI's and addresses on [IPFS](https://ipfs.tech/) 🔗
+-   Contracts: [iExec Sidechain](https://chainlist.org/chain/11155420), with the ABI's and addresses on [IPFS](https://ipfs.tech/) 🔗
 
 ## Frontend 💻
 
