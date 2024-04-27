@@ -2,24 +2,24 @@
   <img src="./docs/static/img/logo.png" width="100" alt="project-logo">
 </p>
 <p align="center">
-	<h1 align="center">EtherEvent</h1>
+	<h1 align="center">iPresence</h1>
 </p>
 <p align="center">
-    <em> Project developed for <a href="https://nearx.notion.site/Hackathon-Optimism-NearX-21124cc4067042cc95bc1c2434322faf">Hackathon Optimism NearX</a></em>
+    <em> Project developed for <a href="https://taikai.network/iExec/hackathons/ibuild/resources">iBuild Online Hackathon</a></em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Airport-Coders/OptiPresence?style=default&logo=opensourceinitiative&logoColor=white&color=78DCE8" alt="license">
-	<img src="https://img.shields.io/github/actions/workflow/status/Airport-Coders/OptiPresence/CI.yml" alt="GitHub Actions Workflow Status">
+	<img src="https://img.shields.io/github/actions/workflow/status/Bottle-Coders/iPresence/CI.yml" alt="GitHub Actions Workflow Status">
 </p>
 
 Innovative checkin tracking platform that revolutionizes the way educational and corporate institutions monitor the presence of students and employees, using blockchain network, specifically [Optimism](https://optimism.io/), to ensure transparency, security, and speed, the project offers an immutable and fraud-proof checkin recording system.
 
-You can find more information about the project in the [documentation](https://bottle-coders.github.io/EtherEvent/).
+You can find more information about the project in the [documentation](https://bottle-coders.github.io/iPresence/).
 
 ## Links
 
--   [Documentation](https://bottle-coders.github.io/EtherEvent/)
--   [Demo deployment](https://optipresence.vercel.app/)
+-   [Documentation](https://bottle-coders.github.io/iPresence/)
+-   [Demo deployment](https://ipresence.vercel.app/)
 -   [Pitch video](https://youtu.be/C6Knx3dPk0w)
 -   [Demo video](https://www.youtube.com/watch?v=W0rheKsxDSw)
 
