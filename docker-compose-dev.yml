@@ -15,6 +15,7 @@ services:
             context: .
             dockerfile: Dockerfile.Node
         command: yarn deploy --network iExec
+
         volumes:
             - ./smartcontracts:/workspace
         env_file:
@@ -29,6 +30,7 @@ services:
             - ./smartcontracts:/workspace
         ports:
             - '3000:3000'
+        tty: true
         depends_on:
             scaffold-deploy:
                 condition: service_completed_successfully
@@ -43,6 +45,7 @@ services:
             - ./smartcontracts/packages/hardhat/deployments:/deployments
         ports:
             - '3333:3333'
+        tty: true
         depends_on:
             frontend-build:
                 condition: service_completed_successfully
@@ -51,16 +54,18 @@ services:
         env_file:
             - .env
 
-    #offchain:
-    #    build:
-    #        context: .
-    #        dockerfile: Dockerfile.Python
-    #    command: python3 main.py
-    #    volumes:
-    #        - ./offchain:/workspace
-    #        - ./smartcontracts/packages/hardhat/deployments:/deployments
-    #    depends_on:
-    #        scaffold-deploy:
-    #            condition: service_completed_successfully
-    #    env_file:
-    #        - .env
+    offchain:
+        build:
+            context: .
+            dockerfile: Dockerfile.Python
+        command: pymon main.py
+        volumes:
+            - ./offchain:/workspace
+            - ./smartcontracts/packages/hardhat/deployments:/deployments
+        tty: true
+        stdin_open: true
+        depends_on:
+            scaffold-deploy:
+                condition: service_completed_successfully
+        env_file:
+            - .env

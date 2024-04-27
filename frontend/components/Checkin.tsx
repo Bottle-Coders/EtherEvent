@@ -11,23 +11,19 @@ function CaptureButton({
   getScreenshot,
   uploadImage,
 }: {
-  getScreenshot: any
-  uploadImage: any
-}): React.ReactElement {
+  getScreenshot: () => void
+  uploadImage: () => void
+}) {
   return (
     <div>
       <button
-        onClick={() => {
-          getScreenshot()
-        }}
+        onClick={getScreenshot}
         className="rounded-full bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
       >
         Capture Photo
       </button>
       <button
-        onClick={() => {
-          uploadImage()
-        }}
+        onClick={uploadImage}
         className="ml-4 rounded-full bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-700"
       >
         Upload Photo
@@ -45,8 +41,7 @@ function useLocation() {
   useEffect(() => {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(({ coords }) => {
-        const { latitude, longitude } = coords
-        setLocation({ latitude, longitude })
+        setLocation({ latitude: coords.latitude, longitude: coords.longitude })
       })
     }
   }, [])
@@ -54,82 +49,65 @@ function useLocation() {
   return location
 }
 
-// Main component
-export function Checkin({ id }: { id: number }): React.ReactElement {
+export function Checkin({ id }: { id: string }) {
   const router = useRouter()
   const webcamRef = React.useRef<Webcam>(null)
   const location = useLocation()
   const [photo, setPhoto] = useState<string | null>(null)
-  const [transactionStarted, setTransactionStarted] = useState(false)
   const { data: contractsData } = useContracts()
-  const { data: hash, isPending, isError, writeContract } = useWriteContract()
-
-  const eventManager = contractsData?.EventManager
+  const {
+    data: hash,
+    isPending,
+    isError,
+    error,
+    writeContract,
+  } = useWriteContract()
+  const checkInManager = contractsData?.CheckInManager
 
   const capture = useCallback(() => {
-    const base64jpeg = webcamRef.current?.getScreenshot()
-    setPhoto(base64jpeg || null)
+    const imageSrc = webcamRef.current?.getScreenshot()
+    setPhoto(imageSrc || null)
   }, [webcamRef])
 
   const uploadPhoto = async () => {
     if (photo) {
+      const fetchRes = await fetch(photo)
+      const blob = await fetchRes.blob()
+      const file = new File([blob], 'photo.jpeg', { type: 'image/jpeg' })
       try {
-        const fetchRes = await fetch(photo)
-        const blob = await fetchRes.blob()
-        const file = new File([blob], 'photo.jpeg', { type: 'image/jpeg' })
         const ipfsHash = await uploadFile(file)
-
-        if (ipfsHash) {
-          toast.success('Photo uploaded successfully!')
-          console.log(ipfsHash)
-          requestCheckIn(ipfsHash)
-        }
+        toast.success('Photo uploaded successfully!')
+        requestCheckIn(ipfsHash)
       } catch (error) {
         toast.error('Error uploading photo. Try again later.')
+        console.error(error)
       }
     } else {
       toast.error('No photo to upload. Please capture a photo first.')
     }
   }
 
-  const requestCheckIn = async (ipfsHash: string) => {
-    setTransactionStarted(true)
-    try {
-      writeContract({
-        address: eventManager?.address as any,
-        abi: eventManager?.abi,
-        functionName: 'requestCheckIn',
-        args: [
-          id as any,
-          ipfsHash as any,
-          `${location?.latitude},${location?.longitude}` as any,
-        ],
-      })
-      toast.success('Check-in request sent!')
-    } catch (error) {
-      console.error('Smart contract interaction failed', error)
-      toast.error('Check-in request failed. Try again later.')
-    } finally {
-      setTransactionStarted(false)
-    }
+  const requestCheckIn = (ipfsHash: string) => {
+    writeContract({
+      address: checkInManager?.address as any,
+      abi: checkInManager?.abi,
+      functionName: 'requestCheckIn',
+      args: [id, ipfsHash, `${location?.latitude},${location?.longitude}`],
+    })
   }
-
   useEffect(() => {
-    if (hash && !isPending && !isError) {
-      toast.promise(new Promise((resolve) => setTimeout(resolve, 2000)), {
-        loading: 'Sending Check-In...',
-        success: 'Check-In request sent!',
-        error: 'Error sending Check-In request!',
-      })
-      router.push('/events')
+    if (hash && !isPending) {
+      if (!isError) {
+        const toastId = toast.loading('Checking in...')
+        setTimeout(() => {
+          toast.success('Checking created successfully!', { id: toastId })
+          router.push('/event/' + id)
+        }, 10000)
+      } else {
+        toast.error('Error creating event!')
+      }
     }
-  }, [hash, isPending, isError, router])
-
-  useEffect(() => {
-    if (transactionStarted && !isPending && !isError) {
-      router.push('/events')
-    }
-  }, [isPending, isError, transactionStarted, router])
+  }, [hash, isPending, isError, router, id])
 
   const videoConstraints = {
     width: 1280,

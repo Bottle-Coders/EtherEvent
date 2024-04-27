@@ -83,14 +83,17 @@ export function CreateEvent() {
   }
 
   useEffect(() => {
-    if (hash && !isPending && !isError) {
-      toast.promise(new Promise((resolve) => setTimeout(resolve, 2000)), {
-        loading: 'Creating event...',
-        success: 'Event created successfully!',
-        error: 'Error creating event!',
-      })
-      onClose()
-      location.reload()
+    if (hash && !isPending) {
+      if (!isError) {
+        const toastId = toast.loading('Creating event...')
+        setTimeout(() => {
+          toast.success('Event created successfully!', { id: toastId })
+          onClose()
+          window.location.reload()
+        }, 4000)
+      } else {
+        toast.error('Error creating event!')
+      }
     }
   }, [hash, isPending, isError, onClose])
 

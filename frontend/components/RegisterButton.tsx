@@ -32,16 +32,19 @@ export function RegisterUserButtonModal() {
   const closeModal = () => setIsOpen(false)
 
   useEffect(() => {
-    if (hash && !isPending && !isError) {
-      toast.promise(new Promise((resolve) => setTimeout(resolve, 5000)), {
-        loading: 'Registering user...',
-        success: 'User registered successfully!',
-        error: 'Error registering user!',
-      })
-      setIsOpen(false)
-      location.reload()
+    if (hash && !isPending) {
+      if (!isError) {
+        const toastId = toast.loading('Registering user...')
+        setTimeout(() => {
+          toast.success('User registered successfully!', { id: toastId })
+          closeModal()
+          window.location.reload()
+        }, 4000)
+      } else {
+        toast.error('Error registering user!')
+      }
     }
-  }, [hash, isPending, isError, setIsOpen])
+  }, [hash, isPending, isError])
 
   const registerUser = async () => {
     writeContract({

@@ -1,9 +1,8 @@
 import os
 
-ALCHEMY_API_KEY = os.getenv('ALCHEMY_API_KEY')
 PINATA_GATEWAY = os.getenv('PINATA_GATEWAY')
 DEPLOYER_PRIVATE_KEY = os.getenv('DEPLOYER_PRIVATE_KEY')
 CONTRACT_CheckInManager = os.getenv('CONTRACT_CheckInManager')
 
 iExecContractPath = '/deployments/iExec/CheckInManager.json'
-HttpProviderAlchemy = f'https://opt-sepolia.g.alchemy.com/v2/{ALCHEMY_API_KEY}'
+iExecHttpProvider = 'https://bellecour.iex.ec'

@@ -10,7 +10,7 @@ from services.facial_biometric import FaceComparatorService
 from services.geolocation import GeolocationService
 
 contract_path = CONTRACT_CheckInManager if CONTRACT_CheckInManager else iExecContractPath
-http_provider = HttpProviderAlchemy
+http_provider = iExecHttpProvider
 
 face_comparator_service = FaceComparatorService()
 geolocation_service = GeolocationService()
