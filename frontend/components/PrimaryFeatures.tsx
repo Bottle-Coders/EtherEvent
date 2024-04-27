@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import { Container } from '../components/Container'
 import Image from 'next/image'
 import gpsIcon from '../static/img/gps.svg'
+import maiIcon from '../static/img/mail-locked.svg'
 
 const features = [
   {
@@ -22,16 +23,29 @@ const features = [
     icon: GPSIcon,
   },
   {
-    name: 'Blockchain-Backed Record Keeping',
+    name: 'DataProtector and Blockchain-Backed Record Keeping',
     description:
-      'Employs the Optimism blockchain network to store check-in data, offering an immutable, transparent, and secure ledger that prevents tampering and ensures data integrity.',
+      'Employs the iExec Sidechain blockchain network to store check-in data, offering an immutable, transparent, and secure ledger that provides unparalleled ownership over their data, preventing tampering and ensuring data integrity.',
     icon: DeviceTouchIcon,
   },
+  {
+    name: 'Web3Mail Integration',
+    description:
+      'The iPresence platform is integrated with Web3Mail from iExec Tools, a decentralized email service that ensures secure communication and data sharing between users, enhancing privacy and security through the use of Ethereum addresses.',
+    icon: MailIcon,
+  },
+
 ]
 
 function GPSIcon(props: React.ComponentPropsWithoutRef<'img'>) {
   return (
     <Image src={gpsIcon} alt="GPS icon" {...props} width={64} height={64} />
+  )
+}
+
+function MailIcon(props: React.ComponentPropsWithoutRef<'img'>) {
+  return (
+    <Image src={maiIcon} alt="Mail icon" {...props} width={64} height={64} />
   )
 }
 
@@ -199,7 +213,7 @@ export function PrimaryFeatures() {
             Why deal with outdated check-in systems when{' '}
             <span className="font-semibold text-white">iPresence</span>{' '}
             offers you the ultimate solution? Embrace the innovation that
-            combines blockchain, facial recognition, and geolocation technology.
+            combines blockchain, facial recognition, Web3Mail and DataProtector from iExec Tools and geolocation technology.
             With <span className="font-semibold text-white">iPresence</span>,
             your presence is all you need to check in, streamlining the process
             for educational institutions, corporate environments, healthcare

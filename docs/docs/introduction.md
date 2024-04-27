@@ -52,6 +52,11 @@ slug: /
 -   **Audit-Ready Reports** 📝: Generates comprehensive and irrefutable reports suitable for internal and external audits, enhancing regulatory compliance and simplifying the auditing process.
 
 -   **Multi-Purpose Verification System** 🎯: Beyond the check-ins, the system can be adapted for other verification needs, including academic achievements, professional credentials, event participation, and health records.
+  
+-   **Web3Mail Integration** 📧: Integration with Web3Mail to communicate and notify the event owner about participants who checked in through the platform at the event.
+  
+-  **DataProtector Integration** 🔐: Integration with DataProtector to ensure the privacy and security of user data, including email and name information.
+
 
 ## Use Cases 📋
 
