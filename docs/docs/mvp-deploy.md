@@ -33,7 +33,7 @@ Here are the current deployed contracts on the `iExec Sidechain`, with the ABI's
 
 ### IPFS links:
 
-> The contracts are deployed on the `iExec Sidechain` and the ABI's and addresses are stored on IPFS.
+> The contracts are deployed on the `iExec Sidechain` and the ABI's and addresses are stored on IPFS for easy access on the frontend and offchain services.
 
 -   [UserRegistry](https://gateway.pinata.cloud/ipfs/QmXQkYeqnAhCzd1xCxSqJ3GAG8G5irqXMdoxzL4QF28NeF)
 -   [EventManager](https://gateway.pinata.cloud/ipfs/QmeA1w3neJexq6pMsFU1tt4bKj25YafjtVCrDXYRwGqwxo)
