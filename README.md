@@ -20,7 +20,7 @@ You can find more information about the project in the [documentation](https://b
 
 -   [Documentation](https://bottle-coders.github.io/iPresence/)
 -   [Demo deployment](https://ipresence.vercel.app/)
--   [Pitch video](https://youtu.be/C6Knx3dPk0w)
+-   [Pitch video](https://www.youtube.com/watch?v=1XerTy3dx8o)
 -   [Demo video](https://www.youtube.com/watch?v=W0rheKsxDSw)
 
 ## Authors
