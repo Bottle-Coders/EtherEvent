@@ -109,7 +109,7 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
     if (!protectedData) return
     const emailProtectedData = protectedData[0]
     console.log('emailProtectedData:', emailProtectedData)
-    if (!emailProtectedData) return
+
     writeContract({
       address: checkInManager?.address as any,
       abi: checkInManager?.abi,
@@ -131,7 +131,6 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
     if (!protectedData) return
     const emailProtectedData = protectedData[0]
     console.log('emailProtectedData:', emailProtectedData)
-    if (!emailProtectedData) return
 
     console.log('Sending email...')
     await sendEmail({
