@@ -13,7 +13,7 @@ Before you start, you need to have the following prerequisites:
 -   [Git](https://git-scm.com/) - Git is a distributed version control system. 🌐
 -   [Docker / Docker compose](https://docs.docker.com/get-docker/) - Docker is a platform for building, running, and shipping applications. Docker Compose is a tool for defining and running multi-container Docker applications. 🐳
 -   A wallet or a wallet provider to interact with the blockchain. You can use, for example: [Metamask](https://metamask.io/). 👛
--   An account on [Alchemy](https://www.alchemy.com/) and [Pinata](https://pinata.cloud/) to get the required API keys. 🔑
+-   An account on [Pinata](https://pinata.cloud/) to get the required API keys. 🔑
 
 ## Project 📂
 
@@ -35,7 +35,6 @@ On the root of the project, you will find a `.env.example` file. You need to cre
 
 ```bash title=".env"
 # Web3 provider
-ALCHEMY_API_KEY="YOUR_ALCHEMY_API_KEY"
 DEPLOYER_PRIVATE_KEY="YOUR_DEPLOY_WALLET_PRIVATE_KEY"
 
 # IPFS
@@ -49,6 +48,6 @@ CONTRACT_EventManager="http://gateway.pinata.cloud/ipfs/QmZ.....................
 CONTRACT_CheckInManager="http://gateway.pinata.cloud/ipfs/QmZ......................."
 ```
 
-You can get the `ALCHEMY_API_KEY` by creating an account on [Alchemy](https://www.alchemy.com/), and [creating an Alchemy app](https://cro-docs.alchemy.com/guides/getting-started#id-1.create-an-alchemy-app). The `DEPLOYER_PRIVATE_KEY` is the private key of the account that will deploy the contracts on the testnet, you can follow the instructions on the [How to export an account's private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to get it. The `PINATA_JWT` and `PINATA_GATEWAY` are required to upload images to IPFS, you can get them by creating an account on [Pinata](https://pinata.cloud/), [creating an API key](https://pinata.cloud/keys), and [getting the gateway](https://app.pinata.cloud/gateway).
+The `DEPLOYER_PRIVATE_KEY` is the private key of the account that will deploy the contracts on the testnet, you can follow the instructions on the [How to export an account's private key](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key) to get it. The `PINATA_JWT` and `PINATA_GATEWAY` are required to upload images to IPFS, you can get them by creating an account on [Pinata](https://pinata.cloud/), [creating an API key](https://pinata.cloud/keys), and [getting the gateway](https://app.pinata.cloud/gateway).
 
 _🍀 optional: If you want to use the contracts deployed, you can set the IPFS gateway URL of each contract in the `.env` file. Here are the current deployed contracts IPFS's: [UserRegistry](https://gateway.pinata.cloud/ipfs/QmemAFKSXauKjvGtmJ6g1Q4rAMaMxftgwcZFH9h3422DSJ), [EventManager](https://gateway.pinata.cloud/ipfs/QmaLrH9dMkPNsLfekvmJsnHaeSJ1dwsGoUxsnbyRCyCnsp), [CheckInManager](https://gateway.pinata.cloud/ipfs/QmXKRiVTHygfaPZR6D7pNaSVoS7Ym96g6zLmRWm9PtDLta). If not set, the services of the project will use the contracts in local file mode._
