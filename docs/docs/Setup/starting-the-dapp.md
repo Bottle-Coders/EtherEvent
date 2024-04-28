@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 In this project, we have three Docker Compose main files with one common service.
 
--   `docker-compose-dev.yml` / **Development mode**: This file is used to run in development mode, operating the scaffold-op Next.js server to interact with the testnet contracts, local off-chain server, and the DApp frontend. It is necessary to set the environment variables in the `.env` file, instructions can be found in the [Environment Variables](./prerequisites#environment-variables) section.
+-   `docker-compose-dev.yml` / **Development mode**: This file is used to run in development mode, operating the scaffold-eth2 Next.js server to interact with the testnet contracts, local off-chain server, and the DApp frontend. It is necessary to set the environment variables in the `.env` file, instructions can be found in the [Environment Variables](./prerequisites#environment-variables) section.
 -   `docker-compose-deploy.yml` / **Deploy mode**: This file is used to deploy the contracts to the testnet and run a local off-chain server and the DApp frontend. It is necessary to set the environment variables in the `.env` file, instructions can be found in the [Environment Variables](./prerequisites#environment-variables) section.
 -   `docker-compose-test.yml` / **Test mode**: This file is used to run the tests of the off-chain and the contracts in a local environment.
 
@@ -48,3 +48,5 @@ docker compose -f docker-compose-test.yml up
 
 </TabItem>
 </Tabs>
+
+The DApp will be available at [http://localhost:3333](http://localhost:3333). If you are running the DApp in development mode, you can access the [scaffold-eth2](https://github.com/scaffold-eth/scaffold-eth-2) Next.js server at [http://localhost:3000](http://localhost:3000) to debug the contracts.
