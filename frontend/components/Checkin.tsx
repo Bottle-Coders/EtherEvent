@@ -107,7 +107,8 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
   const requestCheckIn = (ipfsHash: string) => {
     console.log('protectedData:', protectedData)
     if (!protectedData) return
-    const emailProtectedData = protectedData.find((data) => data.schema.email)
+    const emailProtectedData = protectedData[0]
+    console.log('emailProtectedData:', emailProtectedData)
     if (!emailProtectedData) return
     writeContract({
       address: checkInManager?.address as any,
@@ -124,16 +125,13 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
 
   const [isSendingEmail, setIsSendingEmail] = useState(false)
 
-  console.log('eventName:', eventName)
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const sendEmailHandle = async () => {
     console.log('protectedData:', protectedData)
     if (!protectedData) return
-    const emailProtectedData = protectedData.find((data) => data.schema.email)
-    if (!emailProtectedData) return
-
+    const emailProtectedData = protectedData[0]
     console.log('emailProtectedData:', emailProtectedData)
+    if (!emailProtectedData) return
 
     console.log('Sending email...')
     await sendEmail({
