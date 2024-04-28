@@ -54,6 +54,10 @@ This diagram illustrates the sequence of interactions between the contracts, inc
 
 <iframe style={{border: "none"}} width="800" height="450" src="https://whimsical.com/embed/Vc7fidHDSz8txJQ5wy6mUH"></iframe>
 
+## Offchain 🐍
+
+The offchain service is a Python application that listens to events on the blockchain and validates the face recognition and geo-location of the users. It uses the [web3](https://github.com/ethereum/web3.py) package to interact with the Ethereum blockchain, the [face_recognition](https://github.com/ageitgey/face_recognition) library to validate the facial recognition of the users and the [geopy](https://github.com/geopy/geopy) library to validate the geo-location of the users. The offchain service is used to validate the check-in requests and ensure the integrity of the data.
+
 ## Docker 🐳
 
 ### Services 🛠️
