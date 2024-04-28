@@ -66,6 +66,8 @@ export function RegisterUserButtonModal() {
       args: [name, faceHash],
     })
 
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+
     const protectData = {
       data: {
         email,
