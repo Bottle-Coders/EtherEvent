@@ -31,7 +31,7 @@ app[offchain.1]: Waiting for events...
 
 Here are the current deployed contracts on the `iExec Sidechain`, with the ABI's and addresses on IPFS. You can find the ABI's and the addresses of the [project contracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts/packages/hardhat/contracts) by getting the `address` and `abi` properties of the deployed contracts:
 
-IPFS links:
+### IPFS links:
 
 > The contracts are deployed on the `iExec Sidechain` and the ABI's and addresses are stored on IPFS.
 
@@ -39,7 +39,7 @@ IPFS links:
 -   [EventManager](https://gateway.pinata.cloud/ipfs/QmeA1w3neJexq6pMsFU1tt4bKj25YafjtVCrDXYRwGqwxo)
 -   [CheckInManager](https://gateway.pinata.cloud/ipfs/QmPdsBB99ZPRQACiKNtxzLogB9hLEgiXJPdNdtSccn2kxZ)
 
-Blockscout links:
+### Blockscout links:
 
 > All the contracts are deployed on the `iExec Sidechain` and can be found on the [Blockscout](https://blockscout-bellecour.iex.ec/) explorer. Also, all the contracts are verified on the explorer with the source code.
 
