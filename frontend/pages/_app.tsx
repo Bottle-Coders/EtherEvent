@@ -36,7 +36,10 @@ export const bellecour = {
 const config = getDefaultConfig({
   appName: 'iPresence',
   appDescription: 'Project developed for iBuild Online Hackathon',
-  projectId: 'iexec-presence',
+  appUrl: 'https://ipresence.vercel.app',
+  appIcon:
+    'https://raw.githubusercontent.com/Bottle-Coders/iPresence/main/docs/static/img/logo.png',
+  projectId: 'fa699deee486e82428c56335a6604284',
   chains: [bellecour],
   ssr: true,
 })

@@ -110,6 +110,7 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
     const emailProtectedData = protectedData[0]
     console.log('emailProtectedData:', emailProtectedData)
     console.log('checkInManager:', checkInManager)
+
     writeContract({
       address: checkInManager?.address as any,
       abi: checkInManager?.abi,
@@ -122,6 +123,8 @@ export function Checkin({ id, eventName }: { id: number; eventName: string }) {
       ],
     })
   }
+
+  console.log('error:', error)
 
   const [isSendingEmail, setIsSendingEmail] = useState(false)
 
