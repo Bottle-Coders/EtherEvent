@@ -45,7 +45,7 @@ slug: /
 
 -   **DataProtector Integration** 🔐: Integration with DataProtector to ensure the privacy and security of user data, including email and name information.
 
--   **Secure Biometric Authentication** 🔒: Leveraging facial recognition technology, the project ensures that only the registered individual can check in. This feature is pivotal in eliminating "buddy punching" and unauthorized access.
+-   **Secure Biometric Authentication** 🔒: Leveraging facial recognition technology, the project ensures that only the registered individual can check in. This feature is pivotal in eliminating "buddy punching" and unauthorized access. All the facial recognition verification are made on a offchain service, providing a secure calculation.
 
 -   **Real-Time Location Validation** 🌍: Incorporates GPS and geofencing technologies to validate the exact location of check-in, ensuring presence at the designated site, whether it's a workplace, classroom, or remote location.
 
