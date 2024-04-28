@@ -17,13 +17,14 @@ A user interaction diagram that shows the flow of the user interaction with the 
 
 ## Folders 📁
 
--   [smartcontracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts): Repository of [Scaffold-eth-2](https://github.com/scaffold-eth/scaffold-eth-2) with the smart contracts and tests for the project. 📜
+-   [.github](https://github.com/Bottle-Coders/iPresence/tree/main/.github): Github actions for the project, with the tests and autodeploy of the frontend and offchain services. 🛠️
+-   [docs](https://github.com/Bottle-Coders/iPresence/tree/main/docs): Documentation of the project with [docusaurus](https://docusaurus.io/). _You are here 🤓_.
 -   [frontend](https://github.com/Bottle-Coders/iPresence/tree/main/frontend): The [Next.js](https://nextjs.org/) application for the frontend of the project with [rainbowkit](https://www.rainbowkit.com/), [wagmi](https://wagmi.sh/) for integration on the blockchain and [iExec SDK](https://tools.docs.iex.ec/) for the confidential computing. 💻
 -   [offchain](https://github.com/Bottle-Coders/iPresence/tree/main/offchain): Offchain [python](https://www.python.org/) service for the project, with the [web3](https://github.com/ethereum/web3.py) package to listen to events on the blockchain and validate the face recognition and geo-location of the users. 🐍
--   [docs](https://github.com/Bottle-Coders/iPresence/tree/main/docs): Documentation of the project with [docusaurus](https://docusaurus.io/). _You are here 🤓_.
--   [.github](https://github.com/Bottle-Coders/iPresence/tree/main/.github): Github actions for the project, with the tests and autodeploy of the frontend and offchain services. 🛠️
+-   [smartcontracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts): Repository of [Scaffold-eth-2](https://github.com/scaffold-eth/scaffold-eth-2) with the smart contracts and tests for the project. 📜
 -   `Dockerfile.* and docker-compose-*.yml`: Docker containers for the services of the project, with [docker-compose](https://docs.docker.com/compose/) for the development, production, and test environments. 🐳
 -   `Procfile`: Heroku file to run the offchain service in the cloud. ☁️
+-   `.env.example`: Example of the environment variables file for the project. 🔐
 
 ## Contracts 📄
 
