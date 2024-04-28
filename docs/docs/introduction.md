@@ -8,7 +8,7 @@ slug: /
     <img src="img/logo.png" alt="iPresence Logo" width="200" />
     <h1>Welcome to iPresence 👋</h1>
     <h3><strong>Decentralized Check-In and Attendance Verification System 🛡️</strong></h3>
-    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://iex.ec/">IExec</a>, it ensures privacity and security with confidential computing. This project offers an immutable and fraud-proof check-in recording system.</p>
+    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://iex.ec/">IExec</a>, it ensures privacity and security with confidential computing. This project offers an immutable and fraud-proof check-in recording system in events.</p>
 </div>
 
 ## Pitch video 🚀
@@ -36,6 +36,8 @@ slug: /
 -   **Integration with other systems** 🔄: For workplaces, the solution can integrate with existing HR(payroll) systems to streamline payment processes based on validated data. In education, it can connect to student information systems to update academic records, attendance scores and other relevant data. This reduces errors and administrative burden while ensuring records are up to date and accurate.
 
 -   **Extended to other verification requirements** ✅: In addition to check-in, the solution can be customized for a variety of other verification requirements. This includes obtaining and verifying academic transcripts, professional certifications, event or seminar attendance, and even medical records or treatment plans. The secure, transparent, and immutable nature of the project provides a solid foundation for any system that requires an indisputable record.
+
+-   **Privacy and Security** 🔒: The project integrates with DataProtector to ensure the privacy and security of user data, including email and name information. This ensures that sensitive data is protected and that users can trust the system to handle their information securely.
 
 ## Features 🔥
 
