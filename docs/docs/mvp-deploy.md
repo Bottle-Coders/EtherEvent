@@ -22,8 +22,8 @@ The offchain service provides the backend services for blockchain events interac
 ```markdown
 heroku[offchain.1]: Starting process with command `sh -c "cd offchain && python3 main.py"`
 heroku[offchain.1]: State changed from starting to up
-app[offchain.1]: Loading contract from: https://gateway.pinata.cloud/ipfs/QmSJKQ1K1Rikxe3m18cC2dWed1sBaxwnwuKbGZptxcQnbB
-app[offchain.1]: Loading contract at address: 0x3B684c8330A0cDF52625504925dfDd27E6af1a1b
+app[offchain.1]: Loading contract from: https://gateway.pinata.cloud/ipfs/QmPdsBB99ZPRQACiKNtxzLogB9hLEgiXJPdNdtSccn2kxZ
+app[offchain.1]: Loading contract at address: 0x186953EEAa009247EAf45FEeB5D037Af874C74De
 app[offchain.1]: Waiting for events...
 ```
 
@@ -31,6 +31,6 @@ app[offchain.1]: Waiting for events...
 
 Here are the current deployed contracts on the `iExec Sidechain`, with the ABI's and addresses on IPFS. You can find the ABI's and the addresses of the [project contracts](https://github.com/Bottle-Coders/iPresence/tree/main/smartcontracts/packages/hardhat/contracts) by getting the `address` and `abi` properties of the deployed contracts:
 
--   [UserRegistry](https://gateway.pinata.cloud/ipfs/QmTfK9PZXJkDXqCmT6rwT7o268jjpwtUkJr7aCFuuCQkgk)
--   [EventManager](https://gateway.pinata.cloud/ipfs/QmP5GCxh9vJHQtQ6gt1nDziXJNtRSgmfjsYZyDtPmacVqo)
--   [CheckInManager](https://gateway.pinata.cloud/ipfs/QmSJKQ1K1Rikxe3m18cC2dWed1sBaxwnwuKbGZptxcQnbB)
+-   [UserRegistry](https://gateway.pinata.cloud/ipfs/QmXQkYeqnAhCzd1xCxSqJ3GAG8G5irqXMdoxzL4QF28NeF)
+-   [EventManager](https://gateway.pinata.cloud/ipfs/QmeA1w3neJexq6pMsFU1tt4bKj25YafjtVCrDXYRwGqwxo)
+-   [CheckInManager](https://gateway.pinata.cloud/ipfs/QmPdsBB99ZPRQACiKNtxzLogB9hLEgiXJPdNdtSccn2kxZ)
