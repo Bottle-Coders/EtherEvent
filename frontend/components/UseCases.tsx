@@ -11,7 +11,7 @@ interface UseCase {
   body: string
 }
 
-const useCases: Array<UseCase> = [
+const useCases = [
   {
     title: 'Enhanced Academic Integrity',
     body: 'iPresence revolutionizes academic attendance, ensuring only registered students can mark their presence using secure biometric authentication. This has significantly reduced cases of proxy attendance and improved participation in my lectures.',

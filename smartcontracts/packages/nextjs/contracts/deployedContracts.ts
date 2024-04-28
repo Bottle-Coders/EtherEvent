@@ -7,7 +7,7 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 const deployedContracts = {
   134: {
     CheckInManager: {
-      address: "0x09bCe986EcA9803e8E3b3A88D2D5E6b341E0297E",
+      address: "0xbE04AD3977AbcF83C93d2bc6bEdD820a8af99122",
       abi: [
         {
           inputs: [
@@ -162,6 +162,11 @@ const deployedContracts = {
                   type: "uint256",
                 },
                 {
+                  internalType: "address",
+                  name: "emailProtectedAddress",
+                  type: "address",
+                },
+                {
                   internalType: "enum CheckInManager.CheckInStatus",
                   name: "status",
                   type: "uint8",
@@ -216,6 +221,11 @@ const deployedContracts = {
                   internalType: "uint256",
                   name: "timestamp",
                   type: "uint256",
+                },
+                {
+                  internalType: "address",
+                  name: "emailProtectedAddress",
+                  type: "address",
                 },
                 {
                   internalType: "enum CheckInManager.CheckInStatus",
@@ -308,6 +318,11 @@ const deployedContracts = {
               name: "userLocation",
               type: "string",
             },
+            {
+              internalType: "address",
+              name: "emailProtectedAddress",
+              type: "address",
+            },
           ],
           name: "requestCheckIn",
           outputs: [],
@@ -331,7 +346,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     EventManager: {
-      address: "0x24604dab7B6D48cd86acbdF2e2225d5Bb2fF2d5B",
+      address: "0x23784569659BBEa648e8d15C121093D25a43B9Ba",
       abi: [
         {
           anonymous: false,
@@ -618,7 +633,7 @@ const deployedContracts = {
       inheritedFunctions: {},
     },
     UserRegistry: {
-      address: "0x9642B5c026F44666F19facC8B1FaC957a13ba84a",
+      address: "0x30aEBd6f6F91651F98f853ed3dF1Fd7B907a9c7d",
       abi: [
         {
           anonymous: false,

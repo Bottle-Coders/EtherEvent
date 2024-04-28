@@ -8,7 +8,7 @@ slug: /
     <img src="img/logo.png" alt="iPresence Logo" width="200" />
     <h1>Welcome to iPresence 👋</h1>
     <h3><strong>Decentralized Check-In and Attendance Verification System 🛡️</strong></h3>
-    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://iex.ec/">IExec</a>, it ensures transparency, security, and speed. This project offers an immutable and fraud-proof check-in recording system.</p>
+    <p>An innovative check-in tracking platform revolutionizing attendance monitoring in educational and corporate institutions. Utilizing the blockchain network, specifically <a href="https://iex.ec/">IExec</a>, it ensures privacity and security with confidential computing. This project offers an immutable and fraud-proof check-in recording system.</p>
 </div>
 
 ## Pitch video 🚀
@@ -39,6 +39,10 @@ slug: /
 
 ## Features 🔥
 
+-   **Web3Mail Integration** 📧: Integration with Web3Mail to communicate and notify the event owner about participants who checked in through the platform at the event.
+
+-   **DataProtector Integration** 🔐: Integration with DataProtector to ensure the privacy and security of user data, including email and name information.
+
 -   **Secure Biometric Authentication** 🔒: Leveraging facial recognition technology, the project ensures that only the registered individual can check in. This feature is pivotal in eliminating "buddy punching" and unauthorized access.
 
 -   **Real-Time Location Validation** 🌍: Incorporates GPS and geofencing technologies to validate the exact location of check-in, ensuring presence at the designated site, whether it's a workplace, classroom, or remote location.
@@ -52,11 +56,6 @@ slug: /
 -   **Audit-Ready Reports** 📝: Generates comprehensive and irrefutable reports suitable for internal and external audits, enhancing regulatory compliance and simplifying the auditing process.
 
 -   **Multi-Purpose Verification System** 🎯: Beyond the check-ins, the system can be adapted for other verification needs, including academic achievements, professional credentials, event participation, and health records.
-  
--   **Web3Mail Integration** 📧: Integration with Web3Mail to communicate and notify the event owner about participants who checked in through the platform at the event.
-  
--  **DataProtector Integration** 🔐: Integration with DataProtector to ensure the privacy and security of user data, including email and name information.
-
 
 ## Use Cases 📋
 

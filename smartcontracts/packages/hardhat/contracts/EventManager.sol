@@ -67,7 +67,7 @@ contract EventManager {
 		uint256 _eventId,
 		EventData memory data,
 		bool _isNewEvent
-	) private {
+	) private validEventData(data) {
 		Event memory newEvent = Event({
 			name: data.name,
 			description: data.description,

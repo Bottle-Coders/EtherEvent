@@ -21,6 +21,7 @@ contract CheckInManager {
 		string faceHash; // IPFS hash of the user's face image
 		string location; // Latitude and longitude: "lat, long"
 		uint256 timestamp; // Timestamp of the check-in request
+		address emailProtectedAddress; // Email protected address
 		CheckInStatus status;
 	}
 
@@ -74,7 +75,7 @@ contract CheckInManager {
 	// Check if the user has not reached the maximum check-ins
 	modifier checkMaxCheckIns(uint256 _eventId, address _user) {
 		require(
-			checkIns[_eventId][_user].length < 3,
+			checkIns[_eventId][_user].length < 999,
 			"Maximum check-ins tries reached"
 		);
 		_;
@@ -140,7 +141,8 @@ contract CheckInManager {
 	function requestCheckIn(
 		uint256 _eventId,
 		string calldata unknownFaceHash,
-		string calldata userLocation
+		string calldata userLocation,
+		address emailProtectedAddress
 	)
 		external
 		eventExists(_eventId)
@@ -155,6 +157,7 @@ contract CheckInManager {
 				faceHash: unknownFaceHash,
 				location: userLocation,
 				timestamp: block.timestamp,
+				emailProtectedAddress: emailProtectedAddress,
 				status: CheckInStatus.Pending
 			})
 		);
