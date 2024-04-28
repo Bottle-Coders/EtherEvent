@@ -76,6 +76,83 @@ In this diagram you can follow the dependencies of the services and dockerfiles 
 
 ## CI/CD Actions 🔄
 
-Here you can see the CI/CD actions that are running on the project, with the tests, build and deploy of the frontend and offchain services.
+Here you can see the CI/CD actions that are running on the project, with the tests, build and deploy of the frontend and offchain services. You can access the Docker auto-tests with the [Github Actions](https://github.com/Bottle-Coders/iPresence/actions) on the [workflow CI](https://github.com/Bottle-Coders/iPresence/actions/workflows/CI.yml).
 
 <iframe style={{border: "none"}} width="800" height="450" src="https://whimsical.com/embed/KtKtXfeTCC5NTR4LTFEUAz"></iframe>
+
+### Latest docker tests artifacts logs from the [workflow CI](https://github.com/Bottle-Coders/iPresence/actions/workflows/CI.yml).
+
+```sh
+scaffold-test-1  | Downloading compiler 0.8.17
+scaffold-test-1  | Compiled 3 Solidity files successfully (evm target: london).
+scaffold-test-1  |
+scaffold-test-1  |   CheckInManager
+scaffold-test-1  |     Check-in Request Submission
+scaffold-test-1  |       ✔ Should allow a user to request a check-in
+scaffold-test-1  |     Check-in Approval and Rejection
+scaffold-test-1  |       ✔ Should allow the offchain validator to approve a check-in
+scaffold-test-1  |       ✔ Should allow the offchain validator to reject a check-in
+scaffold-test-1  |     Check-in Information Retrieval
+scaffold-test-1  |       ✔ Should allow a user to retrieve their check-in requests
+scaffold-test-1  |       ✔ Should allow retrieval of all user check-ins for an event
+scaffold-test-1  |       ✔ Should allow retrieval of all check-ins for an event
+scaffold-test-1  |
+scaffold-test-1  |   EventManager
+scaffold-test-1  |     Event Creation
+scaffold-test-1  |       ✔ Should allow creating a new event
+scaffold-test-1  |     Event Updates
+scaffold-test-1  |       ✔ Should allow the owner to update the event
+scaffold-test-1  |       ✔ Should prevent non-owners from updating the event
+scaffold-test-1  |     Event Retrieval
+scaffold-test-1  |       ✔ Should allow anyone to retrieve event information
+scaffold-test-1  |       ✔ Should allow retrieving all events
+scaffold-test-1  |     Event Validation
+scaffold-test-1  |       ✔ Should prevent creating events with invalid details
+scaffold-test-1  |
+scaffold-test-1  |   UserRegistry
+scaffold-test-1  |     User Registration
+scaffold-test-1  |       ✔ Should allow a new user to register
+scaffold-test-1  |       ✔ Should not allow registering with an existing address
+scaffold-test-1  |       ✔ Should reject registration with invalid name
+scaffold-test-1  |       ✔ Should reject registration with invalid IPFS hash
+scaffold-test-1  |     Data Retrieval
+scaffold-test-1  |       ✔ Should allow fetching user information by address
+scaffold-test-1  |       ✔ Should allow users to fetch their own information
+scaffold-test-1  |       ✔ Should revert when fetching non-existent user info
+scaffold-test-1  |     Data Update
+scaffold-test-1  |       ✔ Should allow a user to update their name
+scaffold-test-1  |       ✔ Should allow a user to update their face hash
+scaffold-test-1  |
+scaffold-test-1  | ·-------------------------------------------|---------------------------|-------------|-----------------------------·
+scaffold-test-1  | |           Solc version: 0.8.17            ·  Optimizer enabled: true  ·  Runs: 200  ·  Block limit: 30000000 gas  │
+scaffold-test-1  | ············································|···························|·············|······························
+scaffold-test-1  | |  Methods                                                                                                          │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  Contract        ·  Method                ·  Min        ·  Max        ·  Avg        ·  # calls      ·  eur (avg)  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  CheckInManager  ·  replyCheckIn          ·      68620  ·     113034  ·      90827  ·            4  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  CheckInManager  ·  requestCheckIn        ·     269968  ·     287068  ·     281368  ·            3  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  CheckInManager  ·  setOffchainValidator  ·          -  ·          -  ·      26712  ·            1  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  EventManager    ·  createEvent           ·     274705  ·     274957  ·     274873  ·            3  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  EventManager    ·  updateEvent           ·          -  ·          -  ·      62755  ·            1  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  UserRegistry    ·  registerUser          ·     117419  ·     117467  ·     117435  ·            3  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  UserRegistry    ·  updateUserInfo        ·      40895  ·      43611  ·      42253  ·            4  ·          -  │
+scaffold-test-1  | ···················|························|·············|·············|·············|···············|··············
+scaffold-test-1  | |  Deployments                              ·                                         ·  % of limit   ·             │
+scaffold-test-1  | ············································|·············|·············|·············|···············|··············
+scaffold-test-1  | |  CheckInManager                           ·          -  ·          -  ·    1150202  ·        3.8 %  ·          -  │
+scaffold-test-1  | ············································|·············|·············|·············|···············|··············
+scaffold-test-1  | |  EventManager                             ·          -  ·          -  ·    1036111  ·        3.5 %  ·          -  │
+scaffold-test-1  | ············································|·············|·············|·············|···············|··············
+scaffold-test-1  | |  UserRegistry                             ·          -  ·          -  ·     692525  ·        2.3 %  ·          -  │
+scaffold-test-1  | ·-------------------------------------------|-------------|-------------|-------------|---------------|-------------·
+scaffold-test-1  |
+scaffold-test-1  |   21 passing (2s)
+scaffold-test-1  |
+```
